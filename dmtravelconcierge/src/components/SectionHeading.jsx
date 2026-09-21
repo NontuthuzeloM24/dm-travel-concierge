@@ -5,14 +5,16 @@ function SectionHeading({
   align = "left",
   light = false,
 }) {
+  const classes = [
+    "section-heading",
+    `section-heading-${align}`,
+    light && "section-heading-light",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div
-      className={`
-        section-heading
-        section-heading-${align}
-        ${light ? "section-heading-light" : ""}
-      `}
-    >
+    <div className={classes}>
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
 
       <h2>{title}</h2>

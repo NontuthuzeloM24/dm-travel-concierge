@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-
 import { Menu, X } from "lucide-react";
+
+const navigation = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Journal", path: "/blog" },
+  { label: "Contact", path: "/contact" },
+];
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const location = useLocation();
 
@@ -13,34 +20,39 @@ function Header() {
   }, [location.pathname]);
 
   useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
     document.body.classList.toggle("menu-is-open", menuOpen);
+
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
 
     return () => {
       document.body.classList.remove("menu-is-open");
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [menuOpen]);
 
-  const navigation = [
-    {
-      label: "Home",
-      path: "/",
-    },
-    {
-      label: "About",
-      path: "/about",
-    },
-    {
-      label: "Journal",
-      path: "/blog",
-    },
-    {
-      label: "Contact",
-      path: "/contact",
-    },
-  ];
+  const headerClass = [
+    "site-header",
+    scrolled && "header-scrolled",
+    menuOpen && "header-open",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <header className={`site-header ${menuOpen ? "header-open" : ""}`}>
+    <header className={headerClass}>
       <div className="container header-inner">
         <Link to="/" className="brand" aria-label="DM Travel Concierge home">
           <span className="brand-mark">DM</span>
@@ -49,6 +61,7 @@ function Header() {
         </Link>
 
         <nav
+          id="main-navigation"
           className={`main-navigation ${menuOpen ? "navigation-open" : ""}`}
           aria-label="Main navigation"
         >
@@ -77,6 +90,7 @@ function Header() {
           className="mobile-menu-button"
           aria-label={menuOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={menuOpen}
+          aria-controls="main-navigation"
           onClick={() => setMenuOpen((current) => !current)}
         >
           {menuOpen ? (

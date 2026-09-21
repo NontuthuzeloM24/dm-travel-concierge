@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 function DestinationCard({ title, subtitle, description, image }) {
@@ -19,10 +20,14 @@ function DestinationCard({ title, subtitle, description, image }) {
 
         <p>{description}</p>
 
-        <button type="button" className="inline-link">
-          Discover
+        {/* Takes the visitor to the enquiry form with this destination filled in */}
+        <Link
+          to={`/contact?destination=${encodeURIComponent(title)}`}
+          className="inline-link"
+        >
+          Enquire
           <ArrowUpRight size={16} />
-        </button>
+        </Link>
       </div>
     </article>
   );

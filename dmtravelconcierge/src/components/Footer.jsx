@@ -1,67 +1,91 @@
-import { Link } from "react-router-dom";
+import { ArrowUpRight, Mail } from "lucide-react";
 
-import { ArrowUpRight, Instagram, Mail } from "lucide-react";
+const InstagramIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <rect
+      x="3"
+      y="3"
+      width="18"
+      height="18"
+      rx="5"
+      stroke="currentColor"
+      strokeWidth="1.7"
+    />
+
+    <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.7" />
+
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+  </svg>
+);
 
 function Footer() {
   return (
     <footer className="site-footer">
-      <div className="container">
-        <div className="footer-main">
-          <div className="footer-brand">
-            <Link to="/" className="footer-logo">
-              DM
-            </Link>
+      <div className="container footer-main">
+        <div className="footer-brand">
+          <p className="eyebrow">DM Travel Concierge</p>
 
-            <p>
-              Bespoke journeys.
-              <br />
-              Considered details.
-              <br />
-              Extraordinary experiences.
-            </p>
-          </div>
+          <h2>
+            Travel, thoughtfully
+            <br />
+            arranged.
+          </h2>
 
-          <div className="footer-column">
-            <span className="footer-heading">Explore</span>
+          <p className="footer-description">
+            Bespoke travel planning and concierge services for meaningful
+            journeys across South Africa and beyond.
+          </p>
+        </div>
 
-            <Link to="/">Home</Link>
+        <div className="footer-column">
+          <p className="footer-label">Explore</p>
 
-            <Link to="/about">About</Link>
-
-            <Link to="/blog">Journal</Link>
-
-            <Link to="/contact">Contact</Link>
-          </div>
-
-          <div className="footer-column">
-            <span className="footer-heading">Connect</span>
-
-            <a href="mailto:info@dmtravelconcierge.co.za">
-              <Mail size={15} />
-              Email
+          <nav className="footer-links">
+            <a href="/">
+              Home
+              <ArrowUpRight size={15} />
             </a>
 
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Instagram size={15} />
-              Instagram
+            <a href="/about">
+              About
+              <ArrowUpRight size={15} />
+            </a>
+
+            <a href="/blog">
+              Journal
+              <ArrowUpRight size={15} />
+            </a>
+
+            <a href="/contact">
+              Contact
+              <ArrowUpRight size={15} />
+            </a>
+          </nav>
+        </div>
+
+        <div className="footer-column">
+          <p className="footer-label">Contact</p>
+
+          <div className="footer-contact">
+            <a href="mailto:desigan@dmtravelconcierge.co.za">
+              <Mail size={17} />
+              <span>desigan@dmtravelconcierge.co.za</span>
             </a>
           </div>
         </div>
+      </div>
 
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} DM Travel Concierge</span>
+      <div className="container footer-bottom">
+        <p>© {new Date().getFullYear()} DM Travel Concierge.</p>
 
-          <span>Cape Town · South Africa</span>
-
-          <a href="#top" className="back-to-top">
-            Back to top
-            <ArrowUpRight size={14} />
-          </a>
-        </div>
+        <p>Curated journeys. Considered details.</p>
       </div>
     </footer>
   );

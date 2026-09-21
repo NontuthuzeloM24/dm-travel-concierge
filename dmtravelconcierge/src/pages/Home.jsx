@@ -1,5 +1,4 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-
 import { Link } from "react-router-dom";
 
 import usePageTitle from "../hooks/usePageTitle";
@@ -27,7 +26,7 @@ function Home() {
           <h1>
             Travel,
             <br />
-            <em>beautifully considered.</em>
+            <span className="accent">beautifully considered.</span>
           </h1>
 
           <p className="hero-description">
@@ -47,7 +46,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="hero-scroll">
+        <div className="hero-scroll" aria-hidden="true">
           <ArrowDown size={15} />
           <span>Scroll to explore</span>
         </div>
@@ -57,7 +56,9 @@ function Home() {
 
       <section className="section intro-section">
         <div className="container intro-grid">
-          <div className="intro-number">01</div>
+          <div className="intro-number" aria-hidden="true">
+            01
+          </div>
 
           <div className="intro-content">
             <SectionHeading

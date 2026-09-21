@@ -1,38 +1,21 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Mail, Phone } from "lucide-react";
 
-const InstagramIcon = () => (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <rect
-      x="3"
-      y="3"
-      width="18"
-      height="18"
-      rx="5"
-      stroke="currentColor"
-      strokeWidth="1.7"
-    />
-
-    <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.7" />
-
-    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-  </svg>
-);
+const links = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Journal", path: "/blog" },
+  { label: "Contact", path: "/contact" },
+];
 
 function Footer() {
   return (
     <footer className="site-footer">
       <div className="container footer-main">
         <div className="footer-brand">
-          <p className="eyebrow">DM Travel Concierge</p>
+          <p className="eyebrow eyebrow-light">DM Travel Concierge</p>
 
-          <h2>
+          <h2 className="footer-title">
             Travel, thoughtfully
             <br />
             arranged.
@@ -47,26 +30,13 @@ function Footer() {
         <div className="footer-column">
           <p className="footer-label">Explore</p>
 
-          <nav className="footer-links">
-            <a href="/">
-              Home
-              <ArrowUpRight size={15} />
-            </a>
-
-            <a href="/about">
-              About
-              <ArrowUpRight size={15} />
-            </a>
-
-            <a href="/blog">
-              Journal
-              <ArrowUpRight size={15} />
-            </a>
-
-            <a href="/contact">
-              Contact
-              <ArrowUpRight size={15} />
-            </a>
+          <nav className="footer-links" aria-label="Footer">
+            {links.map((item) => (
+              <Link key={item.path} to={item.path}>
+                {item.label}
+                <ArrowUpRight size={15} />
+              </Link>
+            ))}
           </nav>
         </div>
 
@@ -78,14 +48,19 @@ function Footer() {
               <Mail size={17} />
               <span>desigan@dmtravelconcierge.co.za</span>
             </a>
+
+            <a href="tel:+27814475990">
+              <Phone size={17} />
+              <span>+27 81 447 5990</span>
+            </a>
           </div>
         </div>
       </div>
 
       <div className="container footer-bottom">
-        <p>© {new Date().getFullYear()} DM Travel Concierge.</p>
+        <p>© {new Date().getFullYear()} DM Travel Concierge. All rights reserved.</p>
 
-        <p>Curated journeys. Considered details.</p>
+        <p>CIPC Registration No: 2026/464704/07</p>
       </div>
     </footer>
   );

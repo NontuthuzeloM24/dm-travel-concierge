@@ -59,7 +59,7 @@ function About() {
 
       <section className="about-feature">
         <img
-          src="/images/chapmans-peak.jpg"
+          src="/public/chapmans-peak.jpg"
           alt="Chapman's Peak coastline"
           loading="lazy"
         />

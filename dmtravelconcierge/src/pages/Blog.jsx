@@ -40,7 +40,7 @@ function Blog() {
                   <p>{post.excerpt}</p>
 
                   {/* No article pages exist yet, so no dead "Read story" button. */}
-                  <span className="blog-soon">Coming soon</span>
+                  <span className="blog-soon"></span>
                 </div>
               </article>
             ))}

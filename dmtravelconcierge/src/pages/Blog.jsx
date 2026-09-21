@@ -1,5 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
-
 import usePageTitle from "../hooks/usePageTitle";
 
 import PageHero from "../components/PageHero";
@@ -41,10 +39,8 @@ function Blog() {
 
                   <p>{post.excerpt}</p>
 
-                  <button type="button" className="inline-link">
-                    Read story
-                    <ArrowUpRight size={16} />
-                  </button>
+                  {/* No article pages exist yet, so no dead "Read story" button. */}
+                  <span className="blog-soon">Coming soon</span>
                 </div>
               </article>
             ))}

@@ -260,6 +260,13 @@ main {
   transition: border-color var(--transition);
 }
 
+.brand-logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 /* Solid bar fades in after scrolling. It is a pseudo-element so that
    backdrop-filter doesn't trap the fixed mobile menu inside the header. */
 .site-header::before {

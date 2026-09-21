@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "/public/logo.jpg";
 
 const navigation = [
   { label: "Home", path: "/" },
@@ -54,10 +55,8 @@ function Header() {
   return (
     <header className={headerClass}>
       <div className="container header-inner">
-        <Link to="/" className="brand" aria-label="DM Travel Concierge home">
-          <span className="brand-mark">DM</span>
-
-          <span className="brand-name">TRAVEL CONCIERGE</span>
+        <Link to="/" className="brand">
+          <img src={logo} alt="DM Travel Concierge" className="brand-logo" />
         </Link>
 
         <nav

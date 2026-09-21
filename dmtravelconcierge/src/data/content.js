@@ -4,7 +4,7 @@ export const destinations = [
     subtitle: "Garden Route",
     description:
       "Dramatic coastlines, ancient forests and unforgettable natural beauty.",
-    image: "/images/tsitsikamma.jpg",
+    image: "/public/tsitsikama.jpg",
   },
 
   {
@@ -12,7 +12,7 @@ export const destinations = [
     subtitle: "South Africa",
     description:
       "Experience the Big Five and the extraordinary landscapes of the African wilderness.",
-    image: "/images/kruger.jpg",
+    image: "/public/kruger.jpg",
   },
 
   {
@@ -20,7 +20,7 @@ export const destinations = [
     subtitle: "Cape Town",
     description:
       "One of the world’s most spectacular coastal drives, where mountain meets ocean.",
-    image: "/images/chapmans-peak.jpg",
+    image: "/public/chapmans-peek.jpg",
   },
 
   {
@@ -28,7 +28,7 @@ export const destinations = [
     subtitle: "Cape Town",
     description:
       "Contemporary architecture, art, design and exceptional views over the Mother City.",
-    image: "/images/silo-hotel.jpg",
+    image: "/public/silo.jpg",
   },
 
   {
@@ -36,7 +36,7 @@ export const destinations = [
     subtitle: "Stellenbosch & Franschhoek",
     description:
       "Beautiful vineyards, exceptional food and some of South Africa’s most refined experiences.",
-    image: "/images/winelands.jpg",
+    image: "/public/winelandss.jpg",
   },
 ];
 
@@ -66,7 +66,7 @@ export const blogPosts = [
     category: "Travel Journal",
     excerpt:
       "A considered approach to creating journeys that feel effortless from beginning to end.",
-    image: "/images/about.jpg",
+    image: "/public/logo.jpg",
   },
 
   {
@@ -74,7 +74,7 @@ export const blogPosts = [
     category: "Destination",
     excerpt:
       "Discover a more refined side of the Mother City through carefully selected experiences.",
-    image: "/images/chapmans-peak.jpg",
+    image: "/public/ellermans-house.webp",
   },
 
   {
@@ -82,6 +82,6 @@ export const blogPosts = [
     category: "Concierge",
     excerpt:
       "Luxury is often less about extravagance and more about having every detail considered.",
-    image: "/images/winelands.jpg",
+    image: "/public/maldives.jpg",
   },
 ];
